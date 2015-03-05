@@ -1,6 +1,7 @@
 ###########
 # site.url, site.title
-
+baseurl: 'http://lpetre.github.io/animated-octo-dangerzone'
+title: 'Becky &amp; Luke'
 
 ########
 # more settings
