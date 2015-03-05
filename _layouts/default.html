@@ -10,8 +10,11 @@
    <script src="{{ site.url }}/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+  <div class="container">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -19,22 +22,38 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">{{ site.title }}</a>
+          <a class="navbar-brand visible-xs" href="#">Becky &amp; Luke</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="https://github.com/planetjekyll/jekyll-bootstrap-theme">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">The Wedding <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#ceremony">Ceremony &amp; Reception</a></li>
+                <li><a href="#">Rehersal dinner</a></li>
+                <li><a href="#">Wedding brunch</a></li>
+                <li><a href="#">Gift registry</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Details <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Accomodation</a></li>
+                <li><a href="#">Travel options</a></li>
+                <li><a href="#">Carpooling &amp; house shares</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
+      </div><!--/.container-fluid -->
     </nav>
 
-    <div class="container">
-      <div class="content">
-        {{ content }}
-      </div>
-    </div><!-- /.container -->
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <img src="images/header.png" class="center-block img-responsive" alt="Becky and Luke">
+    </div>
 
+  </div>
 </body>
 </html>
