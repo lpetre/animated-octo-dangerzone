@@ -4,27 +4,55 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic,300italic,300);
 
 // add bootstrap variable settings here
-$font-family-serif:       'Merriweather', serif;
-$font-family-sans-serif:  'Merriweather', serif;
-$brand-primary:  black;
+$font-family-serif:       'Merriweather', serif !default;
+$font-family-sans-serif:  'Merriweather', serif !default;
 
 @import 'bootstrap';
-
 
 // add more css stuff here
 
 body {
-  padding-top: 50px;
+  padding-top: 10px;
 }
-
-.content {
-  padding: 40px 15px;
-}
-
 
 section {
-  margin-bottom: 2.666em;
+  margin-bottom: 1.333em;
   padding-bottom: 1.333em;
+  border-bottom: thin solid #f3f3f3;
+}
+
+.navbar-nav > li{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-left:30px;
+  margin-right:30px;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+#accommodation {
+  .list-group-item {
+      border: inherit;
+      margin-bottom: 1.333em;
+      padding-bottom: 1.333em;
+      border-bottom: thin solid #f3f3f3;
+  }
+
+  .list-group-item-heading a {
+    margin-top: 5px;
+  }
+}
+
+.navbar-default {
+  background-color: inherit;
+  border: inherit;
   border-bottom: thin solid #f3f3f3;
 }
 

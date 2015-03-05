@@ -1,0 +1,16 @@
+- name: Chatham Bars Inn
+  url: http://www.chathambarsinn.com/
+  description: We have been allocated a block of rooms for guest who would like to stay at the wedding venue. Please reference ‘Petre Wedding’ when booking
+
+- name: Hawthorne Motel
+  url: http://www.thehawthorne.com/
+  description: Within walking distance of the wedding, non-ocean view double rooms from $260 per night
+
+- name: Chatham Seafarer
+  url: http://www.chathamseafarer.com/
+  description: Within walking distance of the wedding, double rooms from $195 per night
+
+- name: Chatham Motel
+  url: http://www.chathammotel.com/
+  description: Within walking distance of the wedding, double rooms from $195 per night
+

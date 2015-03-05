@@ -2,98 +2,18 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <title>{{ page.title }} - {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>{{ site.title }}</title>
 
    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/style.css" >
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+   <script src="{{ site.baseurl }}/js/holder.min.js"></script>
 </head>
 <body>
   <div class="container">
-
-    <!-- Static navbar -->
-    <nav class="navbar">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand visible-xs" href="#">Becky &amp; Luke</a>
-        </div>
-        <div id="navbar" class="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">The Wedding <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#ceremony">Ceremony &amp; Reception</a></li>
-                <li><a href="#">Rehersal dinner</a></li>
-                <li><a href="#">Wedding brunch</a></li>
-                <li><a href="#">Gift registry</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Details <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Accomodation</a></li>
-                <li><a href="#">Travel options</a></li>
-                <li><a href="#">Carpooling &amp; house shares</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
-
-    <!-- Main component for a primary marketing message or call to action -->
-    <section>
-      <div class="row">
-        <img src="images/header.png" class="center-block img-responsive" alt="Becky and Luke">
-      </div>
-    </section>
-
-    <section id="ceremony">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>The Ceremony</h2>
-            <h2><span>Will Be Held On</span></h2>
-            <h2>August 10, 2015</h2>
-            <h2>Chatham Bars Inn 16.30 EST</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Contact Us</h2>
-            <div class="contact-container">
-              <div class="row">
-                <form>
-                <div class="col-md-6 col-sm-6">
-                  <textarea rows="7" class="form-control no-resize" placeholder="Message"></textarea>
-                </div>
-                <!-- break -->
-
-                <div class="col-md-6 col-sm-6">
-                  <input type="text" class="form-control" placeholder="Name">
-                  <input type="email" class="form-control" placeholder="Email">
-                  <input type="submit" value="Submit" class="btn btn-lg btn-green">
-                </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    {{ content }}
   </div>
 </body>
 </html>

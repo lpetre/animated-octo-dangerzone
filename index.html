@@ -1,13 +1,191 @@
 ---
 layout: default
-title:  'Welcome'
 ---
 
-<h1>Jekyll Bootstrap starter template</h1>
+<div class="row">
+  <img src="images/header.png" class="center-block img-responsive" alt="Becky and Luke">
+</div>
 
-<p class="lead">
-  Use this document as a way to quickly start any new project.<br>
-  All you get is this text and a mostly barebones HTML document.
-</p>
+<!-- Static navbar -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand visible-xs" href="#">{{ site.title }}</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">The Wedding <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#ceremony">Ceremony &amp; Reception</a></li>
+            <li><a href="#other-events">Other Events</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Details <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#accommodation">Accommodation</a></li>
+            <li><a href="#travel">Travel options</a></li>
+            <li><a href="#todo">Things to do</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
 
+<section id="ceremony">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <img src="holder.js/400x400">
+      </div>
+      <div class="col-md-7">
+        <h2>Ceremony and Reception</h2>
+        <p>Monday 10th August 2015</p>
+        <p>4.30pm until late</p>
+        <address>
+          <strong>Chatham Bars Inn</strong><br>
+          297 Shore Rd<br>
+          Chatham, MA 02633<br>
+          United States<br>
+          <abbr title="Phone">P:</abbr>+1.508.945.0096
+        </address>
+        <p>Attire: Cocktail</p>
+        <p>The ceremony will begin at 4.30pm on the beach beside The Boat House, followed by cocktail hour, dinner and dancing under the stars.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section id="other-events">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Other Events</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <p>Rehearsal dinner</p>
+        <p>Sunday 9th August 2015</p>
+        <p>7.30pm</p>
+        <p>Chatham, venue details to follow.</p>
+      </div>
+      <div class="col-md-4">
+        <p>Wedding brunch</p>
+        <p>Tuesday 11th August 2015</p>
+        <p>from 10.30am</p>
+        <p>Chatham, again venue details to follow.</p>
+        <p>Please check back again soon!</p>
+      </div>
+      <div class="col-md-4">
+        <img src="holder.js/300x200">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="accommodation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center">Accommodation</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 vertical-center">
+        <img src="images/chatham.jpg" class="img-responsive">
+      </div>
+      <div class="col-md-6">
+        <div class="list-group">
+          <div class="list-group-item">
+            <p class="list-group-item-text">There are also lots of more inexpensive hotels within walking distance or a short taxi ride away. We’ve listed a selection below and it is also worth checking sites such as <a href="http://booking.com/">booking.com</a> and <a href="www.tripadvisor.com/Tourism-g41499-Chatham_Cape_Cod_Massachusetts-Vacations.html">TripAdvisor</a>.</p>
+          </div>
+          {% for place in site.data.accommodations %}
+          <div class="list-group-item">
+            <a href="{{place.url}}" target="_new" class="list-group-item-heading"><h4>{{place.name}}<br><small><em>{{place.url}}</em></small></h4></a>
+            <p class="list-group-item-text">{{place.description}}</p>
+          </div>
+          {% endfor %}
+          <div class="list-group-item">
+            <p class="list-group-item-text">Also check out <a href="https://www.airbnb.com/s/Chatham--MA">Airbnb</a>, <a href="http://homeaway.com">homeaway.com</a> and <a href="http://vbro.com">vbro.com</a> for week long holiday cottage rentals in and around Chatham.</p>
+          </div>
+        </div>
+        
+        <p></p>        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="travel">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Travel</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        The closest airport to the Cape is Boston Logan. Flights leave regularly from all London airports, with more affordable options going via Ireland and Iceland. You can also fly into New York and get the train from Penn Station. It is a very pretty train journey and takes about 4 and a half hours. Train tickets can be booked here: www.amtrak.com
+
+        Flight prices are fluctuating so good to set up alerts for the best deals on sites such as kayak, skyskanner and Expedia. (make links)
+
+        Once you have your travel plans confirmed do let us know and we will coordinate carpooling etc from Boston to the Cape.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="todo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Things to do</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        Cape Cod is a lovely holiday destination. The town of Chatham itself is a small beach resort with restaurants, bars, gift shops and a beautiful beach. There are cycle rides, walking trails, trip over to Martha’s Vineyard from Woods Hole. Blah blah blah I lost inspiration… maybe we should miss this bit out??
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+          <div class="row">
+            <form>
+            <div class="col-md-6 col-sm-6">
+              <textarea rows="7" class="form-control no-resize" placeholder="Message"></textarea>
+            </div>
+            <!-- break -->
+
+            <div class="col-md-6 col-sm-6">
+              <input type="text" class="form-control" placeholder="Name">
+              <input type="email" class="form-control" placeholder="Email">
+              <input type="submit" value="Submit" class="btn btn-lg btn-green">
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
