@@ -21,6 +21,13 @@ body {
   padding: 40px 15px;
 }
 
+
+section {
+  margin-bottom: 2.666em;
+  padding-bottom: 1.333em;
+  border-bottom: thin solid #f3f3f3;
+}
+
 @media (min-width: 768px) {
     .navbar .navbar-nav {
         display: inline-block;
