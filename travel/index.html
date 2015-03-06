@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+<div class="anchor" id="accommodation"></div>
+<section>
+  <div class="container accommodation">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center">Accommodation</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 vertical-center">
+        <img src="holder.js/300x300" class="img-responsive"> <br>
+        <img src="holder.js/300x300" class="img-responsive">
+      </div>
+      <div class="col-md-8">
+        <div class="list-group">
+          <div class="list-group-item">
+            <p class="list-group-item-text">There are also lots of more inexpensive hotels within walking distance or a short taxi ride away. We’ve listed a selection below and it is also worth checking sites such as <a href="http://booking.com/">booking.com</a> and <a href="www.tripadvisor.com/Tourism-g41499-Chatham_Cape_Cod_Massachusetts-Vacations.html">TripAdvisor</a>.</p>
+          </div>
+          {% for place in site.data.accommodations %}
+          <div class="list-group-item">
+            <a href="{{place.url}}" target="_new" class="list-group-item-heading"><h4>{{place.name}}<br><small><em>{{place.url}}</em></small></h4></a>
+            <p class="list-group-item-text">{{place.description}}</p>
+          </div>
+          {% endfor %}
+          <div class="list-group-item">
+            <p class="list-group-item-text">Also check out <a href="https://www.airbnb.com/s/Chatham--MA">Airbnb</a>, <a href="http://homeaway.com">homeaway.com</a> and <a href="http://vbro.com">vbro.com</a> for week long holiday cottage rentals in and around Chatham.</p>
+          </div>
+        </div>
+        
+        <p></p>        
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="anchor" id="travel"></div>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Travel</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        The closest airport to the Cape is Boston Logan. Flights leave regularly from all London airports, with more affordable options going via Ireland and Iceland. You can also fly into New York and get the train from Penn Station. It is a very pretty train journey and takes about 4 and a half hours. Train tickets can be booked here: www.amtrak.com
+
+        Flight prices are fluctuating so good to set up alerts for the best deals on sites such as kayak, skyskanner and Expedia. (make links)
+
+        Once you have your travel plans confirmed do let us know and we will coordinate carpooling etc from Boston to the Cape.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="anchor" id="todo"></div>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Things to do</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        Cape Cod is a lovely holiday destination. The town of Chatham itself is a small beach resort with restaurants, bars, gift shops and a beautiful beach. There are cycle rides, walking trails, trip over to Martha’s Vineyard from Woods Hole. Blah blah blah I lost inspiration… maybe we should miss this bit out??
+      </div>
+    </div>
+  </div>
+</section>
+
