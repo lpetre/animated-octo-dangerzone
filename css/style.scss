@@ -45,6 +45,12 @@ section {
   border-bottom: thin solid #f3f3f3;
 }
 
+.section-header {
+  text-align: center;
+  margin-bottom: 0.666em;
+  padding-bottom: 0.333em;
+}
+
 .accommodation {
   .list-group-item {
       border: inherit;
