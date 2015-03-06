@@ -1,27 +1,27 @@
 - name: Chatham Bars Inn
   url: http://www.chathambarsinn.com/
-  description: We have been allocated a block of rooms for guest who would like to stay at the wedding venue. Please reference ‘Petre Wedding’ when booking
-
-- name: Chatham Tides
-  url: http://www.chathamtides.com/
-  description: Within walking distance of the wedding, rooms from $280 per night
+  description: This is where the wedding will be. It's a beautiful Gatsby-esque hotel, on the pricy side.
 
 - name: Hawthorne Motel
   url: http://www.thehawthorne.com/
-  description: Within walking distance of the wedding, non-ocean view double rooms from $260 per night
+  description: Just down the beach from the venue, double rooms from $260-$360 per night.
+
+- name: Chatham Tides
+  url: http://www.chathamtides.com/
+  description: On the beach, 10 minute taxi ride from the wedding, rooms from $280 per night.
 
 - name: Queen Anne Inn
   url: http://www.queenanneinn.com/
-  description: Within walking distance of the wedding, rooms from $260 per night
+  description: Within walking distance. Just off Main Street, rooms from $260 per night.
 
 - name: Pleasant Bay Village Resort
   url: http://www.pleasantbayvillage.com/
-  description: Rooms from $235 per night
+  description: 5 minute taxi ride from the wedding, rooms from $235 per night.
 
 - name: Chatham Seafarer
   url: http://www.chathamseafarer.com/
-  description: Within walking distance of the wedding, double rooms from $195 per night
+  description: 10 minute taxi ride from the wedding, double rooms from $195 per night.
 
 - name: Chatham Motel
   url: http://www.chathammotel.com/
-  description: 10 minute taxi ride from the wedding, standard double rooms from $165
+  description: 10 minute taxi ride from the wedding, a great inexpensive option with double rooms from $165 per night.
