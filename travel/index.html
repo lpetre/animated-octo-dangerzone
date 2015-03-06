@@ -3,45 +3,37 @@ layout: default
 ---
 
 <div class="anchor" id="accommodation"></div>
-<section>
-  <div class="container accommodation">
-    <div class="row">
-      <div class="col-md-12 section-header">
-        <h2>Accommodation</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 hidden-xs hidden-sm">
-        <img class="accommodation-image" src="{{site.baseurl}}/images/beach-small.jpeg">
-        <img class="accommodation-image" src="{{site.baseurl}}/images/house-small.jpeg">
-      </div>
-      <div class="col-md-8">
-        <p>There are a large selection of inns, B&amp;Bs, and resorts in the Chatham Area. We’ve listed a selection below, <a href="{{site.baseurl}}/files/Chatham%20Accommodations.pdf">here is a longer list in PDF format</a> and it is also worth checking sites such as <a href="http://booking.com/">booking.com</a>, <a href="http://www.tripadvisor.com/Tourism-g41499-Chatham_Cape_Cod_Massachusetts-Vacations.html">TripAdvisor</a><p>
-        <p>For week long holiday cottage rentals in and around Chatham take a look at: <a href="https://www.airbnb.com/s/Chatham--MA">airbnb.com</a>, <a href="http://homeaway.com">homeaway.com</a> and <a href="http://vbro.com">vbro.com</a></p>
-    
-        <div class="list-group">
-          {% for place in site.data.accommodations %}
-          <div class="list-group-item">
-            <a href="{{place.url}}" target="_new" class="list-group-item-heading"><h4>{{place.name}}<br><small><em>{{place.url}}</em></small></h4></a>
-            <p class="list-group-item-text">{{place.description}}</p>
+<div class="panel panel-default">
+  <div class="panel-heading"><h2 class="text-center">Accommodation</h2></div>
+  <div class="panel-body accommodation" style="background-image: url({{site.baseurl}}/images/house-small.jpeg);">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3"></div>    
+        <div class="col-md-9">
+          <div class="list-group">
+            <div class="list-group-item">
+              <p>There are a large selection of inns, B&amp;Bs, and resorts in the Chatham Area. We’ve listed a selection below and it is also worth checking sites such as <a href="http://booking.com/">booking.com</a>, <a href="http://www.tripadvisor.com/Tourism-g41499-Chatham_Cape_Cod_Massachusetts-Vacations.html">TripAdvisor</a><p>
+              <p>For week long holiday cottage rentals in and around Chatham take a look at: <a href="https://www.airbnb.com/s/Chatham--MA">airbnb.com</a>, <a href="http://homeaway.com">homeaway.com</a> and <a href="http://vbro.com">vbro.com</a></p>
+            </div>
+            {% for place in site.data.accommodations %}
+            <div class="list-group-item">
+              <a href="{{place.url}}" target="_new" class="list-group-item-heading">{{place.name}}</a><br>
+              {{place.description}}
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <div class="anchor" id="travel"></div>
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 section-header">
-        <h2>Travel</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
+<div class="panel panel-default">
+  <div class="panel-heading"><h2 class="text-center">Travel</h2></div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <div class="row">
         The closest airport to the Cape is Boston Logan. Flights leave regularly from all London airports, with more affordable options going via Ireland and Iceland. You can also fly into New York and get the train from Penn Station. It is a very pretty train journey and takes about 4 and a half hours. Train tickets can be booked here: www.amtrak.com
 
         Flight prices are fluctuating so good to set up alerts for the best deals on sites such as kayak, skyskanner and Expedia. (make links)
@@ -50,21 +42,19 @@ layout: default
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <div class="anchor" id="todo"></div>
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 section-header">
-        <h2>Things to do</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        Cape Cod is a lovely holiday destination. The town of Chatham itself is a small beach resort with restaurants, bars, gift shops and a beautiful beach. There are cycle rides, walking trails, trip over to Martha’s Vineyard from Woods Hole. Blah blah blah I lost inspiration… maybe we should miss this bit out??
+<div class="panel panel-default">
+  <div class="panel-heading"><h2 class="text-center">Things to do</h2></div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          Cape Cod is a lovely holiday destination. The town of Chatham itself is a small beach resort with restaurants, bars, gift shops and a beautiful beach. There are cycle rides, walking trails, trip over to Martha’s Vineyard from Woods Hole. Blah blah blah I lost inspiration… maybe we should miss this bit out??
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 

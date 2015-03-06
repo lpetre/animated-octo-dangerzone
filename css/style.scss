@@ -5,7 +5,7 @@
 @import url(http://fonts.googleapis.com/css?family=Arapey);
 
 // add bootstrap variable settings here
-$brand-primary: darken(#aa6644, 6.5%);
+//$brand-primary: darken(#C68890, 6.5%);
 $font-family-serif:       'Merriweather', serif !default;
 $font-family-sans-serif:  'Merriweather', serif !default;
 
@@ -29,7 +29,7 @@ body {
 }
 
 .header {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .anchor {
@@ -39,28 +39,10 @@ body {
   height: 1px;
 }
 
-section {
-  margin-bottom: 2.666em;
-  padding-bottom: 1.333em;
-  border-bottom: thin solid #f3f3f3;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 0.666em;
-  padding-bottom: 0.333em;
-}
-
 .accommodation {
   .list-group-item {
       border: inherit;
-      margin-top: 1.333em;
-      padding-top: 1.333em;
       border-top: thin solid #f3f3f3;
-  }
-
-  .list-group-item-heading a {
-    margin-top: 5px;
   }
 }
 
@@ -76,12 +58,12 @@ section {
 .wedding-event-date, .wedding-event-address, .wedding-event-attire, .wedding-event-description {
   text-align: center;
   font-size: 1.5em;
-  line-height: 1.75;
+  line-height: 1.4;
 }
 
-.accommodation-image {
-  padding-top: 30px;
-  margin-top: 30px;
+.accommodation {
+  font-size: 21px;
+  line-height: 1.4;
 }
 
 @media (min-width: 768px){
