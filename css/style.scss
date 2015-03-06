@@ -52,7 +52,17 @@ body {
   .list-group-item {
       border: inherit;
       border-top: thin solid #f3f3f3;
+      background: rgba(255, 255, 255, 0.9)!important;
   }
+}
+
+.todo {
+  .list-group-item {
+      border: inherit;
+      border-top: thin solid #f3f3f3;
+      background: rgba(255, 255, 255, 0.9)!important;
+  }
+  height: 500px;
 }
 
 .navbar-default {
