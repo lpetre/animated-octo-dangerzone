@@ -5,6 +5,8 @@ title: 'Becky &amp; Luke'
 
 ########
 # more settings
+analytics: google
+analytics_id: UA-60478112-1
 
 markdown: kramdown
 

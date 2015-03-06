@@ -1,0 +1,2 @@
+# turn off analytics when running locally
+analytics: none
