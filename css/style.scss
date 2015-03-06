@@ -17,8 +17,8 @@ $font-family-sans-serif:  'Merriweather', serif !default;
   font-style: normal;
   font-weight: normal;
   color: #000000;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
   text-transform: uppercase;
   letter-spacing: 4px;
 }
@@ -27,12 +27,9 @@ body {
   padding-top: 70px;
 }
 
-#header {
-  height: 400px;
-}
-
-#header img {
-  height: 380px;
+.header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .anchor {
@@ -67,14 +64,17 @@ section {
   border-bottom: thin solid #f3f3f3;
 }
 
-@media (min-width: 768px) {
-    .navbar .navbar-nav {
-        display: inline-block;
+@media (min-width: 768px){
+    .navbar-nav {
+        margin: 0 auto;
+        display: table;
+        table-layout: auto;
         float: none;
-        vertical-align: top;
+        width: 600px;
     }
-
-    .navbar .navbar-collapse {
+    .navbar-nav>li {
+        display: table-cell;
+        float: none;
         text-align: center;
     }
-}
+} 
