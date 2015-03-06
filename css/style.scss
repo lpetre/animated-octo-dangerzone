@@ -29,7 +29,7 @@ body {
 }
 
 .header {
-  padding-top: 20px;
+  padding-top: 80px;
 }
 
 .anchor {
@@ -87,6 +87,7 @@ section {
 @media (min-width: 768px){
     .navbar-nav {
         margin: 0 auto;
+        padding-top: 10px;
         display: table;
         table-layout: auto;
         float: none;
