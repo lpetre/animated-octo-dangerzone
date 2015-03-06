@@ -24,12 +24,7 @@ $font-family-sans-serif:  'Merriweather', serif !default;
 }
 
 body {
-  padding-top: 70px;
-}
-
-.header {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-top: 50px;
 }
 
 .anchor {
@@ -68,6 +63,13 @@ section {
   background-color: white;
   border: inherit;
   border-bottom: thin solid #f3f3f3;
+}
+
+
+.wedding-event-date, .wedding-event-address, .wedding-event-attire, .wedding-event-description {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 2;
 }
 
 @media (min-width: 768px){
