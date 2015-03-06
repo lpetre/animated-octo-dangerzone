@@ -5,6 +5,7 @@
 @import url(http://fonts.googleapis.com/css?family=Arapey);
 
 // add bootstrap variable settings here
+$brand-primary: darken(#aa6644, 6.5%);
 $font-family-serif:       'Merriweather', serif !default;
 $font-family-sans-serif:  'Merriweather', serif !default;
 
@@ -70,13 +71,13 @@ section {
 }
 
 .wedding-event-image {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .wedding-event-date, .wedding-event-address, .wedding-event-attire, .wedding-event-description {
   text-align: center;
   font-size: 1.5em;
-  line-height: 2;
+  line-height: 1.75;
 }
 
 @media (min-width: 768px){
