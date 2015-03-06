@@ -35,16 +35,18 @@ body {
 .anchor {
   padding-top: 120px;
   margin-top: -120px;
-  display: inline-block;
-  height: 1px;
+  height: 0px;
 }
 
 .panel-default > .panel-heading {
+  h2 { margin-top: 10px; }
   background-color: inherit;
 }
 .panel-default {
   border: inherit;
 }
+
+.panel.panel-default { margin-bottom: 5px; }
 
 .accommodation {
   .list-group-item {
