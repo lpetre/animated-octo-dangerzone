@@ -12,14 +12,6 @@ $font-family-sans-serif:  'Merriweather', serif !default;
 
 // add more css stuff here
 
-#nav.affix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1030;
-}
-
 .navbar-nav > li {
   font-size: 20px;
   font-style: normal;
