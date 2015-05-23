@@ -80,9 +80,13 @@ body {
   line-height: 1.4;
 }
 
-.accommodation, .other-events, .todo, .travel {
+.accommodation, .other-events, .todo, .travel, .gifts {
   font-size: 21px;
   line-height: 1.4;
+}
+
+.gifts {
+  padding-top: 20px;
 }
 
 @media (min-width: 768px){
