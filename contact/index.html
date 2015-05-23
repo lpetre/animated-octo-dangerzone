@@ -26,8 +26,8 @@ layout: default
               <div class="col-sm-10">
                 <div data-toggle="buttons">
                   {% for i in (1..5) %}
-                  <label class="btn btn-default">
-                    <input type="radio" name="guestCount" autocomplete="off" value="{{i}}">{{i}}
+                  <label class="btn btn-default {% if i == 1 %}active{% endif %}">
+                    <input type="radio" name="guestCount" autocomplete="off" value="{{i}}" {% if i == 1 %}checked{% endif %}>{{i}}
                   </label>
                   {% endfor %}
                 </div>
@@ -36,7 +36,56 @@ layout: default
         </div>
       </div>
       <div class="row">
-        <div id="people" class="col-md-12"></div>
+      {% for i in (1..5) %}
+      <div class="person-entry {% if i != 1 %}hidden{% endif %}" data-index="{{i}}">
+        <hr/>
+        <div class="form-group">
+          <label for="inputName" class="col-sm-2 control-label">Guest {{i}}</label>
+          <div class="col-sm-5">
+            <input type="text" name="inputName" class="form-control" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-group accept-group">
+          <label for="inputWedding{{i}}" class="col-sm-2 control-label">Wedding</label>
+          <div class="col-sm-5">
+            <label class="radio-inline">
+              <input type="radio" name="inputWedding{{i}}" value="yes"> Accepts with pleasure
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inputWedding{{i}}" value="no"> Declines with regret
+            </label>
+          </div>
+        </div>
+        <div class="form-group meal-group hidden">
+          <label for="inputMeal{{i}}" class="col-sm-2 control-label">Dinner Choice</label>
+          <div class="col-sm-5">
+            <label class="radio-inline">
+              <input type="radio" name="inputMeal{{i}}" value="beef">Beef
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inputMeal{{i}}" value="salmon">Salmon
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inputMeal{{i}}" value="veggie">Vegetarian
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inputMeal{{i}}" value="child">Children's meal
+            </label>
+          </div>
+        </div>
+        <div class="form-group event-group hidden">
+          <label for="inputEvents{{i}}" class="col-sm-2 control-label">Also Attending</label>
+          <div class="col-sm-5">
+            <label class="checkbox-inline">
+              <input type="checkbox" name="inputEvents{{i}}" value="rehearsal">Rehearsal Dinner
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="inputEvents{{i}}" value="brunch">Tuesday Brunch
+            </label>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -51,88 +100,31 @@ layout: default
   </div>
 </div>
 
-<template id="personTemplate">
-  <hr/>
-  <div class="personEntry">
-    <div class="form-group">
-      <label for="inputName" id="inputNameLabel" class="col-sm-2 control-label">Name</label>
-      <div class="col-sm-5">
-        <input type="text" name="inputName" class="form-control" placeholder="Name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputWedding" class="col-sm-2 control-label">Wedding</label>
-      <div data-toggle="weddingOptions">
-        <div class="col-sm-5">
-          <label class="radio-inline">
-            <input type="radio" name="inputWedding" value="yes"> Accepts with pleasure
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="inputWedding" value="no"> Declines with regret
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group mealGroup">
-      <label for="inputMeal" class="col-sm-2 control-label">Dinner Choice</label>
-      <div class="col-sm-5">
-        <label class="radio-inline">
-          <input type="radio" name="inputMeal" value="beef">Beef
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inputMeal" value="salmon">Salmon
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inputMeal" value="veggie">Vegetarian
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="inputMeal" value="child">Children's meal
-        </label>
-      </div>
-    </div>
-    <div class="form-group eventGroup">
-      <label for="inputAccepts" class="col-sm-2 control-label">Also Attending</label>
-      <div class="col-sm-5">
-        <label class="checkbox-inline">
-          <input type="checkbox" name="inputEvents" value="rehearsal">Rehearsal Dinner
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" name="inputEvents" value="brunch">Tuesday Brunch
-        </label>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
   $( document ).ready(function() {
-    var t = document.querySelector('#personTemplate');
+    var updateAttending = function(elem, attending) {
+      $(elem).parents('.person-entry').find(".meal-group,.event-group").removeClass("hidden").toggle(attending);
+    };
+
+    var displayGuests = function(count) {
+      $(".person-entry").each(function(_, elem) {
+        var idx = $(elem).data("index");
+        $(elem).removeClass("hidden").toggle(idx <= count);
+      });
+    };
+
+    $(".accept-group").each(function(_, elem) {
+      $(elem).find("input:radio").change(function(event) {
+        var attending = $(event.target).val() == "yes";
+        updateAttending(this, attending);
+      }.bind(elem));
+      updateAttending(elem, false);
+    });
+
+    displayGuests(1);
 
     $("input[name=guestCount]:radio").change(function (event) {
-      var value = parseInt($(event.target).val());
-      $('#people').empty();
-
-      for (var i = 0; i < value; ++i) {
-        var index = i+1,
-            clone = document.importNode(t.content, true);
-
-        var updateAttending = function(elem, attending) {
-          $(elem).find(".mealGroup,.eventGroup").toggle(attending);
-        };
-
-        $(clone).find('#inputNameLabel').text("Guest " + index);
-        $(clone).find("input[name=inputName]:text").attr("name", "inputName" + index);
-        $(clone).find("input[name=inputMeal]:radio").attr("name", "inputMeal" + index);
-        $(clone).find("input[name=inputEvents]:checkbox").attr("name", "inputEvents" + index);
-        $(clone).find("input[name=inputWedding]:radio").attr("name", "inputWedding" + index).change(function(event) {
-          var attending = $(event.target).val() == "yes",
-              group = $(event.target).parents(".personEntry");
-          updateAttending(group, attending);
-        });
-
-        updateAttending(clone, false);
-        document.querySelector('#people').appendChild(clone);
-      }
+      displayGuests(parseInt($(event.target).val()));
     });
   });
 </script>
