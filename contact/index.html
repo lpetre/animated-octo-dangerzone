@@ -6,15 +6,7 @@ layout: default
   <div class="panel-body travel">
     <div class="container-fluid">
       <div class="row">
-      Thank you for replying! As well our wedding, we would also like to invite you to the following:
-
-      Rehersal dinner
-      Sunday 9th August from 6pm
-      Address
-
-      Morning-after brunch
-      Tuesday 11 August from 11am
-      Address
+        Thank you for replying! As well our wedding, we would also like to invite you to our rehearsal dinner and Tuesday brunch, <a href="/wedding/">details here</a>.
       </div>
     </div>
   </div>
@@ -22,84 +14,92 @@ layout: default
 <div class="panel panel-default">
   <div class="panel-heading"><h2 class="text-center">RSVP</h2></div>
   <div class="panel-body">
-    <div class="container-fluid">
+    <form class="form-horizontal" action="//formspree.io/lpetre+wedding@gmail.com" method="POST">
       <div class="row">
         <div class="col-md-12">
-        <form class="form-horizontal" action="//formspree.io/lpetre+wedding@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Wedding Question!" />
+          <input type="hidden" name="_subject" value="Wedding RSVP" />
           <input type="hidden" name="_cc" value="rebecca_mcewan@hotmail.com" />
           <input type="hidden" name="_next" value="{{site.baseurl}}/" />
           <input type="text" name="_gotcha" style="display:none" />
-<!--           <div class="form-group">
-            <label for="inputFrom" class="col-sm-2 control-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" name="_replyto" class="form-control" id="inputFrom" placeholder="Email">
-            </div>
-          </div> -->
           <div class="form-group">
-            <label for="inputCount" class="col-sm-2 control-label">Guests</label>
-            <div class="col-sm-10">
-              <input type="number" min="1" max="5" step="1" name="_count" class="form-control" id="inputCount" placeholder="How many people in your party">
+            <label for="inputCount" class="col-sm-2 control-label">Number of Guests</label>
+              <div class="col-sm-10">
+                <div data-toggle="buttons">
+                  {% for i in (1..5) %}
+                  <label class="btn btn-default">
+                    <input type="radio" name="guestCount" autocomplete="off" value="{{i}}">{{i}}
+                  </label>
+                  {% endfor %}
+                </div>
             </div>
           </div>
-          <div id="people">
-          </div>
-<!--           <div class="form-group">
+        </div>
+      </div>
+      <div class="row">
+        <div id="people" class="col-md-12"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <input type="submit" value="Send" class="btn btn-lg btn-green">
             </div>
           </div>
- -->        </form>
+        </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
 <template id="personTemplate">
   <hr/>
-  <div class="form-group">
-    <label for="inputName" id="inputNameLabel" class="col-sm-2 control-label">Name</label>
-    <div class="col-sm-5">
-      <input type="text" name="_name1" class="form-control" id="inputName" placeholder="Name">
+  <div class="personEntry">
+    <div class="form-group">
+      <label for="inputName" id="inputNameLabel" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-5">
+        <input type="text" name="inputName" class="form-control" placeholder="Name">
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="inputWedding" class="col-sm-2 control-label">Wedding</label>
-    <div class="col-sm-5">
-      <label class="radio-inline">
-        <input type="radio" name="inputWedding" id="inputWeddingYes" value="yes"> Accepts with pleasure
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inputWedding" id="inputWeddingNo" value="no"> Declines with regret
-      </label>
+    <div class="form-group">
+      <label for="inputWedding" class="col-sm-2 control-label">Wedding</label>
+      <div data-toggle="weddingOptions">
+        <div class="col-sm-5">
+          <label class="radio-inline">
+            <input type="radio" name="inputWedding" value="yes"> Accepts with pleasure
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inputWedding" value="no"> Declines with regret
+          </label>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="form-group" id="mealGroup">
-    <label for="inputMeal" class="col-sm-2 control-label">Dinner Choice</label>
-    <div class="col-sm-5">
-      <label class="radio-inline">
-        <input type="radio" name="inputMeal" id="inputMealBeef" value="beef">Beef
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inputMeal" id="inputMealSalmon" value="salmon">Salmon
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inputMeal" id="inputMealVeggie" value="veggie">Vegetarian
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inputMeal" id="inputMealChil" value="child">Children's
-      </label>
+    <div class="form-group mealGroup">
+      <label for="inputMeal" class="col-sm-2 control-label">Dinner Choice</label>
+      <div class="col-sm-5">
+        <label class="radio-inline">
+          <input type="radio" name="inputMeal" value="beef">Beef
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inputMeal" value="salmon">Salmon
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inputMeal" value="veggie">Vegetarian
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inputMeal" value="child">Children's meal
+        </label>
+      </div>
     </div>
-  </div>
-  <div class="form-group" id="attendingGroup">
-    <label for="inputAccepts" class="col-sm-2 control-label">Also Attending</label>
-    <div class="col-sm-5">
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inputAcceptRehearsal" value="rehearsal">Rehearsal Dinner
-      </label>
-      <label class="checkbox-inline">
-        <input type="checkbox" id="inputAcceptBrunch" value="brunch">Tuesday Brunch
-      </label>
+    <div class="form-group eventGroup">
+      <label for="inputAccepts" class="col-sm-2 control-label">Also Attending</label>
+      <div class="col-sm-5">
+        <label class="checkbox-inline">
+          <input type="checkbox" name="inputEvents" value="rehearsal">Rehearsal Dinner
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" name="inputEvents" value="brunch">Tuesday Brunch
+        </label>
+      </div>
     </div>
   </div>
 </template>
@@ -107,26 +107,38 @@ layout: default
 <script>
   $( document ).ready(function() {
     var t = document.querySelector('#personTemplate');
-    $('#inputCount').change(function(event) {
-      var val = $(event.target).val();
+
+    $("input[name=guestCount]:radio").change(function (event) {
+      var value = parseInt($(event.target).val());
       $('#people').empty();
 
-      for (var i = 0; i < val; ++i) {
-        var clone = document.importNode(t.content, true);
-        var index = i+1;
+      for (var i = 0; i < value; ++i) {
+        var index = i+1,
+            clone = document.importNode(t.content, true);
+
+        var updateAttending = function(elem, attending) {
+          $(elem).find(".mealGroup,.eventGroup").toggle(attending);
+        };
+
         $(clone).find('#inputNameLabel').text("Guest " + index);
-        $('#people').append(clone);
+        $(clone).find("input[name=inputName]:text").attr("name", "inputName" + index);
+        $(clone).find("input[name=inputMeal]:radio").attr("name", "inputMeal" + index);
+        $(clone).find("input[name=inputEvents]:checkbox").attr("name", "inputEvents" + index);
+        $(clone).find("input[name=inputWedding]:radio").attr("name", "inputWedding" + index).change(function(event) {
+          var attending = $(event.target).val() == "yes",
+              group = $(event.target).parents(".personEntry");
+          updateAttending(group, attending);
+        });
+
+        updateAttending(clone, false);
+        document.querySelector('#people').appendChild(clone);
       }
-
-
-
-    })
-    //( "The DOM is now loaded and can be manipulated." );
+    });
   });
 </script>
 <div class="anchor" id="contact"></div>
 <div class="panel panel-default">
-  <div class="panel-heading"><h2 class="text-center">Contact Us</h2></div>
+  <div class="panel-heading"><h2 class="text-center">Questions? Contact Us</h2></div>
   <div class="panel-body">
     <div class="container-fluid">
       <div class="row">
