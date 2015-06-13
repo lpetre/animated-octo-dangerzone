@@ -40,9 +40,9 @@ layout: default
       <div class="person-entry {% if i != 1 %}hidden{% endif %}" data-index="{{i}}">
         <hr/>
         <div class="form-group">
-          <label for="inputName" class="col-sm-2 control-label">Guest {{i}}</label>
+          <label for="inputName{{i}}" class="col-sm-2 control-label">Guest {{i}}</label>
           <div class="col-sm-5">
-            <input type="text" name="inputName" class="form-control" placeholder="Name">
+            <input type="text" name="inputName{{i}}" class="form-control" placeholder="Name">
           </div>
         </div>
         <div class="form-group accept-group">
